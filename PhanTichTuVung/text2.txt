@@ -1,0 +1,6 @@
+program vd;
+begin
+	a := b + 5;
+	a := c;
+	for i := to n do a := i + 1
+end.
