@@ -1,5 +1,10 @@
 #include "scanner.h"
 
+void error(const char ms[]) {
+	printf("\nLoi: %s", ms);
+	exit(1);
+}
+
 char getCh() {
 	// ch = toupper(fgetc(fp)); 
 	n_of_readable_ele = fread(&ch, sizeof(ch), 1, fp);
@@ -37,9 +42,10 @@ int getToken() {
 		Num = 0; ind = 0;
 		while (isdigit(ch)) {
 			if (ind < MAX_DIGIT_LEN) {
-				Num = 10 * Num + ch - 48;  ++ind;// tinh gia tri so				
+				Num = 10 * Num + ch - 48;  ++ind;// tinh gia tri so	
+				ch = getCh();		
 			}
-			ch = getCh();	
+			else error("So qua lon vuot qua 9 chu so.");
 		} 
 		return NUMBER;
 	}

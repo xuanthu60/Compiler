@@ -6,10 +6,11 @@ PROCEDURE gcd(a; b; var d);
 		if a > b then a := a - b
 		else b := b - a;	
 	  d := b;
+	  b := 123456789;
 	End;
 Begin  
    Call Readln(a);	Call Readln(b);
-	(* Call gcd(a,b,c); *)
+	(* Call gcd(a,b,c; *)
 	Call Writeln(c);
 End.
 

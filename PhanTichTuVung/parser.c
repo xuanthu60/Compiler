@@ -2,10 +2,10 @@
 
 void expression();
 
-void error(const char ms[]) {
-	printf("\nLoi: %s", ms);
-	exit(1);
-}
+// void error(const char ms[]) {
+// 	printf("\nLoi: %s", ms);
+// 	exit(1);
+// }
 
 void factor() {
 	if (Token == IDENT) {
