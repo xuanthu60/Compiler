@@ -1,6 +1,8 @@
 #include "parser.h"
+// extern int Token;
+// extern 
 
-void expression();
+// void expression();
 
 // void error(const char ms[]) {
 // 	printf("\nLoi: %s", ms);
@@ -161,11 +163,12 @@ void block() {
 		} while (Token == COMMA);
 		if (Token == SEMICOLON) {
 			Token = getToken();
-			block();
+			//block();
 		}
 		else error("Thieu dau cham phay.");
 	}
-	else if (Token == VAR) {
+
+	if (Token == VAR) {
 		do {
 			Token = getToken();
 			if (Token == IDENT) {
@@ -183,11 +186,12 @@ void block() {
 		} while (Token == COMMA);
 		if (Token == SEMICOLON) {
 			Token = getToken();
-			block();
+			// block();
 		}
 		else error("thieu dau cham phay");
 	}
-	else if (Token == PROCEDURE) {
+	
+	while (Token == PROCEDURE) {
 		Token = getToken();
 		if (Token == IDENT) {
 			Token = getToken();
@@ -210,7 +214,7 @@ void block() {
 				block();
 				if (Token == SEMICOLON) {
 					Token = getToken();
-					block();
+					// block();
 				}
 				else error("thieu dau cham phay.");
 			} 
@@ -218,7 +222,8 @@ void block() {
 		}
 		else error("thieu ten thu tuc/ham.");
 	}
-	else if (Token == BEGIN) {
+
+	if (Token == BEGIN) {
 		do {
 			Token = getToken();
 			statement();
@@ -226,7 +231,7 @@ void block() {
 		if (Token == END) Token = getToken();
 		else error("thieu dau cham phay hoac tu khoa END");
 	}
-	else error("Thieu phan than chuong chinh chinh.");
+	else error("Thieu phan than chuong trinh chinh.");
 }
 
 void program() {
