@@ -32,7 +32,7 @@ int n_of_readable_ele;
 /////////////////////////////////
 
 void error(const char ms[]) {
-	printf("\nLoi: %s", ms);
+	printf("\nLoi: %s, tai dong %d, cot %d.", ms, row, col);
 	exit(1);
 }
 
@@ -43,9 +43,9 @@ char getCh() {
 	// ch = toupper(ch);
 	// // danh so dong, cot de tien theo doi
 	// printf("%d %d", row, col);  printf(" %c\n", ch);
-	// if (ch == 10)  {++row; col = 1;}
-	// else if (ch == '\t')  col += 4;
-	// else  ++col;
+	if (ch == 10)  {++row; col = 1;}
+	else if (ch == '\t')  col += 4;
+	else  ++col;
 	return toupper(ch);
 }
 
